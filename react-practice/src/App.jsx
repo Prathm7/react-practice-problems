@@ -10,6 +10,9 @@ import Tabs from "./problems/P05-tabs-component/Tabs";
 import Tab from "./problems/P05-tabs-component/Tab";
 import Clock from "./problems/P06-auto-updating-clock/Clock";
 import SearchWithDebounce from "./problems/P07-search-with-debounce/SearchWithDebounce";
+import WindowSizeDisplay from "./problems/P08-window-size-hook/WindowSizeDisplay";
+import Dropdown from "./problems/P09-click-outside-to-close/Dropdown";
+import ScrollToTopButton from "./problems/P10-scroll-to-top-button/ScrollToTopButton";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,6 +30,9 @@ function App() {
       </Tabs>
       <Clock />
       <SearchWithDebounce />
+      <WindowSizeDisplay />
+      <Dropdown />
+      <ScrollToTopButton />
     </>
   );
 }
