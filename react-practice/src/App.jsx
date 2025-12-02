@@ -8,6 +8,8 @@ import LoginForm from "./problems/P03-controlled-form-input/ControlledForm";
 import Shop from "./problems/P04–parent-child-lifting-state/Shop";
 import Tabs from "./problems/P05-tabs-component/Tabs";
 import Tab from "./problems/P05-tabs-component/Tab";
+import Clock from "./problems/P06-auto-updating-clock/Clock";
+import SearchWithDebounce from "./problems/P07-search-with-debounce/SearchWithDebounce";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,6 +25,8 @@ function App() {
         <Tab label="Profile">Here is your Profile content.</Tab>
         <Tab label="Settings">Settings content displayed here.</Tab>
       </Tabs>
+      <Clock />
+      <SearchWithDebounce />
     </>
   );
 }
