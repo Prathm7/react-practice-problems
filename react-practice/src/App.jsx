@@ -32,6 +32,11 @@ import VirtualizedListItems from "./problems/P22-virtualized-list/VirtualizedIte
 import AppModalDemo from "./problems/P23-model-component/AppModalDemo";
 import SimpleSelectDemo from "./problems/P24-dropdown-component/SimpleSelectDemo";
 import AppRouter from "./problems/P25-basic-routing-app/AppRouter";
+import FetchPosts from "./problems/P27-fetch-list-with-loading/FetchPosts";
+import DebouncedSearchAPI from "./problems/P28-search-with-api/DebouncedSearchAPI";
+import OptimisticLike from "./problems/P29-optimistic-like-button/OptimisticLike";
+import OptimizedExample from "./problems/P30-performance-optimistic/Optimized";
+import UnoptimizedExample from "./problems/P30-performance-optimistic/Unoptimized";
 
 function AppContent() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -109,6 +114,11 @@ export default function App() {
           <AppModalDemo />
           <SimpleSelectDemo />
           <AppRouter />
+          <FetchPosts/>
+          <DebouncedSearchAPI />
+          <OptimisticLike />
+          <UnoptimizedExample />
+          <OptimizedExample />
         </AuthProvider>
       </ThemeProvider>
     </ToastProvider>
