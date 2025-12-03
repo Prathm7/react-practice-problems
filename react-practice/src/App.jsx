@@ -24,6 +24,7 @@ import { AuthProvider } from "./problems/P15-auth-context/auth-context";
 import { ToastProvider } from "./problems/P16-global-toast-notifications/toast-context";
 import { useToast } from "./problems/P16-global-toast-notifications/toast-context";
 import SignupForm from "./problems/P17-signup-form-validations/SignupForm";
+import PhoneNumbersForm from "./problems/P18-dynamic-form-fields/PhoneNumbersForm";
 
 function AppContent() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -93,6 +94,7 @@ export default function App() {
           <AuthLoginForm />
           <AuthButton />
           <SignupForm />
+          <PhoneNumbersForm />
         </AuthProvider>
       </ThemeProvider>
     </ToastProvider>
