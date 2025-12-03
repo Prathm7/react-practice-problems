@@ -27,6 +27,7 @@ import SignupForm from "./problems/P17-signup-form-validations/SignupForm";
 import PhoneNumbersForm from "./problems/P18-dynamic-form-fields/PhoneNumbersForm";
 import ExampleForm from "./problems/P19-reusable-text-fields/ExampleForm";
 import MultiStepForm from "./problems/P20-multii-step-form/MultiStepForm";
+import ProductTable from "./problems/P21-sortable-and-filterable/ProductTable";
 
 function AppContent() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -99,6 +100,7 @@ export default function App() {
           <PhoneNumbersForm />
           <ExampleForm />
           <MultiStepForm />
+          <ProductTable />
         </AuthProvider>
       </ThemeProvider>
     </ToastProvider>
