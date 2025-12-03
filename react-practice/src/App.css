@@ -67,3 +67,51 @@ html, body {
   background: var(--card);
   border-radius: 8px;
 }
+
+.toast-root {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  min-width: 220px;
+  max-width: 360px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.toast-info { background: #2563eb; } 
+.toast-success { background: #16a34a; }
+.toast-error { background: #dc2626; } 
+.toast-warning { background: #d97706; } 
+
+.toast-message { flex: 1; padding-right: 8px; font-size: 14px; line-height: 1.2; }
+.toast-close {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.9);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 6px;
+  border-radius: 6px;
+}
+
+@media (max-width: 480px) {
+  .toast-root { left: 12px; right: 12px; top: 12px; }
+  .toast { min-width: auto; width: 100%; max-width: none; }
+}

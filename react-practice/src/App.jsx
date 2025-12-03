@@ -21,9 +21,13 @@ import AuthLoginForm from "./problems/P15-auth-context/LoginForm";
 import AuthButton from "./problems/P15-auth-context/AuthButton";
 import Home from "./problems/P15-auth-context/Home";
 import { AuthProvider } from "./problems/P15-auth-context/auth-context";
+import { ToastProvider } from "./problems/P16-global-toast-notifications/toast-context";
+import { useToast } from "./problems/P16-global-toast-notifications/toast-context";
+import SignupForm from "./problems/P17-signup-form-validations/SignupForm";
 
 function AppContent() {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const { showToast } = useToast();
 
   return (
     <div style={{ padding: 40, textAlign: "center" }}>
@@ -41,7 +45,21 @@ function AppContent() {
       >
         Toggle Theme
       </button>
-
+      <div style={{ marginTop: 20 }}>
+        <button
+          onClick={() => showToast("Saved successfully", { type: "success" })}
+        >
+          Show Success Toast
+        </button>
+        <button
+          style={{ marginLeft: 8 }}
+          onClick={() =>
+            showToast("Something went wrong", { type: "error", duration: 6000 })
+          }
+        >
+          Show Error Toast
+        </button>
+      </div>
       <div className="card" style={{ marginTop: 30, padding: 20 }}>
         This card background and text color change with the theme.
       </div>
@@ -51,29 +69,32 @@ function AppContent() {
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <AuthProvider>
-        <Counter />
-        <TodoList />
-        <LoginForm />
-        <Shop />
-        <Tabs>
-          <Tab label="Home">This is the Home tab content.</Tab>
-          <Tab label="Profile">Here is your Profile content.</Tab>
-          <Tab label="Settings">Settings content displayed here.</Tab>
-        </Tabs>
-        <Clock />
-        <SearchWithDebounce />
-        <WindowSizeDisplay />
-        <Dropdown />
-        <ScrollToTopButton />
-        <CounterWithPrevious />
-        <TodoAppWithReducer />
-        <AppContent />
-        <Home />
-        <AuthLoginForm />
-        <AuthButton />
-      </AuthProvider>
-    </ThemeProvider>
+    <ToastProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <Counter />
+          <TodoList />
+          <LoginForm />
+          <Shop />
+          <Tabs>
+            <Tab label="Home">This is the Home tab content.</Tab>
+            <Tab label="Profile">Here is your Profile content.</Tab>
+            <Tab label="Settings">Settings content displayed here.</Tab>
+          </Tabs>
+          <Clock />
+          <SearchWithDebounce />
+          <WindowSizeDisplay />
+          <Dropdown />
+          <ScrollToTopButton />
+          <CounterWithPrevious />
+          <TodoAppWithReducer />
+          <AppContent />
+          <Home />
+          <AuthLoginForm />
+          <AuthButton />
+          <SignupForm />
+        </AuthProvider>
+      </ThemeProvider>
+    </ToastProvider>
   );
 }
