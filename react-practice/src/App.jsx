@@ -26,6 +26,7 @@ import { useToast } from "./problems/P16-global-toast-notifications/toast-contex
 import SignupForm from "./problems/P17-signup-form-validations/SignupForm";
 import PhoneNumbersForm from "./problems/P18-dynamic-form-fields/PhoneNumbersForm";
 import ExampleForm from "./problems/P19-reusable-text-fields/ExampleForm";
+import MultiStepForm from "./problems/P20-multii-step-form/MultiStepForm";
 
 function AppContent() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -97,6 +98,7 @@ export default function App() {
           <SignupForm />
           <PhoneNumbersForm />
           <ExampleForm />
+          <MultiStepForm />
         </AuthProvider>
       </ThemeProvider>
     </ToastProvider>

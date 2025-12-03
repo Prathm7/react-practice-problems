@@ -39,7 +39,7 @@ export default function TextField({
         aria-invalid={hasError}
         aria-describedby={hasError ? `${name}-error` : undefined}
         style={{
-          width: "100%",
+          width: "320px",
           padding: "10px 12px",
           borderRadius: 6,
           border: hasError ? "1px solid red" : "1px solid #ccc",
