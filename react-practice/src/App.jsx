@@ -31,6 +31,7 @@ import ProductTable from "./problems/P21-sortable-and-filterable/ProductTable";
 import VirtualizedListItems from "./problems/P22-virtualized-list/VirtualizedItem";
 import AppModalDemo from "./problems/P23-model-component/AppModalDemo";
 import SimpleSelectDemo from "./problems/P24-dropdown-component/SimpleSelectDemo";
+import AppRouter from "./problems/P25-basic-routing-app/AppRouter";
 
 function AppContent() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -107,6 +108,7 @@ export default function App() {
           <VirtualizedListItems />
           <AppModalDemo />
           <SimpleSelectDemo />
+          <AppRouter />
         </AuthProvider>
       </ThemeProvider>
     </ToastProvider>
