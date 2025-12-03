@@ -30,6 +30,7 @@ import MultiStepForm from "./problems/P20-multii-step-form/MultiStepForm";
 import ProductTable from "./problems/P21-sortable-and-filterable/ProductTable";
 import VirtualizedListItems from "./problems/P22-virtualized-list/VirtualizedItem";
 import AppModalDemo from "./problems/P23-model-component/AppModalDemo";
+import SimpleSelectDemo from "./problems/P24-dropdown-component/SimpleSelectDemo";
 
 function AppContent() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -105,6 +106,7 @@ export default function App() {
           <ProductTable />
           <VirtualizedListItems />
           <AppModalDemo />
+          <SimpleSelectDemo />
         </AuthProvider>
       </ThemeProvider>
     </ToastProvider>
