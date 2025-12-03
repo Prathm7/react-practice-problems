@@ -1,6 +1,4 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import React, { useState, useContext } from "react";
 import "./App.css";
 import Counter from "./problems/P01-basic-counter/BasicCounter";
 import TodoList from "./problems/P02-todo-list/TodoList";
@@ -13,12 +11,43 @@ import SearchWithDebounce from "./problems/P07-search-with-debounce/SearchWithDe
 import WindowSizeDisplay from "./problems/P08-window-size-hook/WindowSizeDisplay";
 import Dropdown from "./problems/P09-click-outside-to-close/Dropdown";
 import ScrollToTopButton from "./problems/P10-scroll-to-top-button/ScrollToTopButton";
+import CounterWithPrevious from "./problems/P11-use-previous-hook/CounterWithPrevious";
+import TodoAppWithReducer from "./problems/P13-todo-with-useReducer/TodoAppWithReducer";
+import {
+  ThemeContext,
+  ThemeProvider,
+} from "./problems/P14-theme-context/theme-context";
 
-function App() {
-  const [count, setCount] = useState(0);
+function AppContent() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <>
+    <div style={{ padding: 40, textAlign: "center" }}>
+      <h1>Theme: {theme}</h1>
+
+      <button
+        onClick={toggleTheme}
+        style={{
+          marginTop: 20,
+          padding: "10px 16px",
+          fontSize: "16px",
+          borderRadius: 6,
+          cursor: "pointer",
+        }}
+      >
+        Toggle Theme
+      </button>
+
+      <div className="card" style={{ marginTop: 30, padding: 20 }}>
+        This card background and text color change with the theme.
+      </div>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
       <Counter />
       <TodoList />
       <LoginForm />
@@ -33,8 +62,9 @@ function App() {
       <WindowSizeDisplay />
       <Dropdown />
       <ScrollToTopButton />
-    </>
+      <CounterWithPrevious />
+      <TodoAppWithReducer />
+      <AppContent />
+    </ThemeProvider>
   );
 }
-
-export default App;
