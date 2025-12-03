@@ -17,6 +17,10 @@ import {
   ThemeContext,
   ThemeProvider,
 } from "./problems/P14-theme-context/theme-context";
+import AuthLoginForm from "./problems/P15-auth-context/LoginForm";
+import AuthButton from "./problems/P15-auth-context/AuthButton";
+import Home from "./problems/P15-auth-context/Home";
+import { AuthProvider } from "./problems/P15-auth-context/auth-context";
 
 function AppContent() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -48,23 +52,28 @@ function AppContent() {
 export default function App() {
   return (
     <ThemeProvider>
-      <Counter />
-      <TodoList />
-      <LoginForm />
-      <Shop />
-      <Tabs>
-        <Tab label="Home">This is the Home tab content.</Tab>
-        <Tab label="Profile">Here is your Profile content.</Tab>
-        <Tab label="Settings">Settings content displayed here.</Tab>
-      </Tabs>
-      <Clock />
-      <SearchWithDebounce />
-      <WindowSizeDisplay />
-      <Dropdown />
-      <ScrollToTopButton />
-      <CounterWithPrevious />
-      <TodoAppWithReducer />
-      <AppContent />
+      <AuthProvider>
+        <Counter />
+        <TodoList />
+        <LoginForm />
+        <Shop />
+        <Tabs>
+          <Tab label="Home">This is the Home tab content.</Tab>
+          <Tab label="Profile">Here is your Profile content.</Tab>
+          <Tab label="Settings">Settings content displayed here.</Tab>
+        </Tabs>
+        <Clock />
+        <SearchWithDebounce />
+        <WindowSizeDisplay />
+        <Dropdown />
+        <ScrollToTopButton />
+        <CounterWithPrevious />
+        <TodoAppWithReducer />
+        <AppContent />
+        <Home />
+        <AuthLoginForm />
+        <AuthButton />
+      </AuthProvider>
     </ThemeProvider>
   );
 }
