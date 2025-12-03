@@ -225,7 +225,7 @@ export default function MultiStepForm({ onSubmit }) {
       {step === 3 && (
         <div>
           <h4>Review your data</h4>
-          <div style={{ background: "#fafafa", padding: 12, borderRadius: 6 }}>
+          <div style={{ background: "lightGrey", padding: 12, borderRadius: 6, color: 'black' }}>
             <p>
               <strong>Name:</strong> {data.name}
             </p>
