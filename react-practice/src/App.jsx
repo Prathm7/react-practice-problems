@@ -28,6 +28,8 @@ import PhoneNumbersForm from "./problems/P18-dynamic-form-fields/PhoneNumbersFor
 import ExampleForm from "./problems/P19-reusable-text-fields/ExampleForm";
 import MultiStepForm from "./problems/P20-multii-step-form/MultiStepForm";
 import ProductTable from "./problems/P21-sortable-and-filterable/ProductTable";
+import VirtualizedListItems from "./problems/P22-virtualized-list/VirtualizedItem";
+import AppModalDemo from "./problems/P23-model-component/AppModalDemo";
 
 function AppContent() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -101,6 +103,8 @@ export default function App() {
           <ExampleForm />
           <MultiStepForm />
           <ProductTable />
+          <VirtualizedListItems />
+          <AppModalDemo />
         </AuthProvider>
       </ThemeProvider>
     </ToastProvider>
